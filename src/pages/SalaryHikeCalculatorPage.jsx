@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import {
   ArrowLeft,
   Calculator,
@@ -9,16 +9,14 @@ import {
   TrendingUp,
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { pageMetadata } from '../data/pageMetadata.js'
 import { calculateSalaryHike } from '../utils/calculations.js'
+import { usePageMetadata } from '../hooks/usePageMetadata.js'
 
 const currencySettings = {
   INR: { locale: 'en-IN', currency: 'INR', symbol: '₹' },
   USD: { locale: 'en-US', currency: 'USD', symbol: '$' },
 }
-
-const pageTitle = 'Salary Hike Calculator | SalaryKit'
-const pageDescription =
-  'Estimate your salary increase, new annual pay, and monthly salary after a hike. Results show gross salary before taxes and deductions.'
 
 function ResultCard({ label, value, description, featured = false, accent = false }) {
   const Icon = featured ? Calculator : TrendingUp
@@ -82,21 +80,7 @@ function SalaryHikeCalculatorPage() {
     hikePercentage: false,
   })
 
-  useEffect(() => {
-    const descriptionTag = document.querySelector('meta[name="description"]')
-    const previousTitle = document.title
-    const previousDescription = descriptionTag?.getAttribute('content')
-
-    document.title = pageTitle
-    descriptionTag?.setAttribute('content', pageDescription)
-
-    return () => {
-      document.title = previousTitle
-      if (descriptionTag && previousDescription !== null) {
-        descriptionTag.setAttribute('content', previousDescription)
-      }
-    }
-  }, [])
+  usePageMetadata(pageMetadata.salaryHike)
 
   const {
     salaryIsValid,

@@ -7,16 +7,14 @@ import {
   RotateCcw,
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { pageMetadata } from '../data/pageMetadata.js'
 import { currencies, formatCurrency } from '../utils/currency.js'
+import { usePageMetadata } from '../hooks/usePageMetadata.js'
 import {
   calculateCurrencyConversion,
   swapCurrencyPair,
 } from '../utils/calculations.js'
 import { fetchExchangeRate } from '../utils/exchangeRates.js'
-
-const pageTitle = 'Salary Converter | SalaryKit'
-const pageDescription =
-  'Convert salary amounts between INR, USD, EUR, GBP, CAD, and AUD using dated Frankfurter reference exchange rates.'
 
 function SalaryConverterPage() {
   const [amount, setAmount] = useState('')
@@ -33,21 +31,7 @@ function SalaryConverterPage() {
     error: '',
   })
 
-  useEffect(() => {
-    const descriptionTag = document.querySelector('meta[name="description"]')
-    const previousTitle = document.title
-    const previousDescription = descriptionTag?.getAttribute('content')
-
-    document.title = pageTitle
-    descriptionTag?.setAttribute('content', pageDescription)
-
-    return () => {
-      document.title = previousTitle
-      if (descriptionTag && previousDescription !== null) {
-        descriptionTag.setAttribute('content', previousDescription)
-      }
-    }
-  }, [])
+  usePageMetadata(pageMetadata.salaryConverter)
 
   useEffect(() => {
     const base = fromCurrency

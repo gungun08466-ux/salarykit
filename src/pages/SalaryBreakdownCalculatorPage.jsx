@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import {
   ArrowLeft,
   CalendarDays,
@@ -10,12 +10,10 @@ import {
   Wallet,
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { pageMetadata } from '../data/pageMetadata.js'
 import { formatCurrency } from '../utils/currency.js'
 import { calculateSalaryBreakdown } from '../utils/calculations.js'
-
-const pageTitle = 'Salary Breakdown Calculator | SalaryKit'
-const pageDescription =
-  'Break down annual gross salary into estimated monthly, weekly, daily, and hourly amounts based on your work schedule.'
+import { usePageMetadata } from '../hooks/usePageMetadata.js'
 
 const currencySymbols = {
   INR: '₹',
@@ -170,21 +168,7 @@ function SalaryBreakdownCalculatorPage() {
     workingHours: false,
   })
 
-  useEffect(() => {
-    const descriptionTag = document.querySelector('meta[name="description"]')
-    const previousTitle = document.title
-    const previousDescription = descriptionTag?.getAttribute('content')
-
-    document.title = pageTitle
-    descriptionTag?.setAttribute('content', pageDescription)
-
-    return () => {
-      document.title = previousTitle
-      if (descriptionTag && previousDescription !== null) {
-        descriptionTag.setAttribute('content', previousDescription)
-      }
-    }
-  }, [])
+  usePageMetadata(pageMetadata.salaryBreakdown)
 
   const {
     annualSalaryValue,

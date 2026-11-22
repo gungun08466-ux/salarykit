@@ -59,7 +59,7 @@ Create the production assets with:
 npm run build
 ```
 
-Vite writes the build output to `dist/`. To serve that build locally, first build and then run:
+Vite writes the build output to `dist/`, then the build script generates nested HTML entry points with route-specific metadata for all public pages. Each entry point loads the same React application and uses the existing runtime metadata hook as a fallback. To serve that build locally, first build and then run:
 
 ```bash
 npm run preview
@@ -75,6 +75,8 @@ salarykit/
 ├── index.html
 ├── package.json
 ├── package-lock.json
+├── scripts/
+│   └── generate-route-html.js
 ├── vite.config.js
 ├── public/
 │   ├── salarykit-mark.svg
@@ -89,6 +91,7 @@ salarykit/
     │   ├── SiteLayout.jsx
     │   └── ToolCard.jsx
     ├── data/
+    │   ├── pageMetadata.js
     │   └── tools.js
     ├── pages/
     │   ├── ContactPage.jsx
@@ -122,7 +125,7 @@ salarykit/
 
 ## Deployment
 
-Vercel is the planned hosting platform. SalaryKit has not yet been deployed, and no production address is available.
+SalaryKit is hosted at `https://salarykit-theta.vercel.app/`. The Vercel build runs `npm run build`, which creates the route-specific HTML files in `dist/` for direct requests and browser refreshes.
 
 ## Future improvements
 

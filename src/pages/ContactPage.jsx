@@ -1,27 +1,10 @@
-import { useEffect } from 'react'
 import { ArrowLeft, Clock3, Mail, MessageCircle } from 'lucide-react'
 import { Link } from 'react-router-dom'
-
-const pageTitle = 'Contact Us | SalaryKit'
-const pageDescription =
-  'Contact SalaryKit with questions, feedback, or issues with one of our salary calculators.'
+import { pageMetadata } from '../data/pageMetadata.js'
+import { usePageMetadata } from '../hooks/usePageMetadata.js'
 
 function ContactPage() {
-  useEffect(() => {
-    const descriptionTag = document.querySelector('meta[name="description"]')
-    const previousTitle = document.title
-    const previousDescription = descriptionTag?.getAttribute('content')
-
-    document.title = pageTitle
-    descriptionTag?.setAttribute('content', pageDescription)
-
-    return () => {
-      document.title = previousTitle
-      if (descriptionTag && previousDescription !== null) {
-        descriptionTag.setAttribute('content', previousDescription)
-      }
-    }
-  }, [])
+  usePageMetadata(pageMetadata.contact)
 
   return (
     <div className="min-h-full bg-[#F8FAFF]">

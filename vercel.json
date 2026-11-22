@@ -1,0 +1,29 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/tools/salary-hike",
+      "destination": "/tools/salary-hike/index.html"
+    },
+    {
+      "source": "/tools/salary-converter",
+      "destination": "/tools/salary-converter/index.html"
+    },
+    {
+      "source": "/tools/job-offer-comparison",
+      "destination": "/tools/job-offer-comparison/index.html"
+    },
+    {
+      "source": "/tools/salary-breakdown",
+      "destination": "/tools/salary-breakdown/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/index.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy/index.html"
+    }
+  ]
+}

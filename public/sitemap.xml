@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://salarykit-theta.vercel.app/</loc>
+  </url>
+  <url>
+    <loc>https://salarykit-theta.vercel.app/tools/salary-hike</loc>
+  </url>
+  <url>
+    <loc>https://salarykit-theta.vercel.app/tools/salary-converter</loc>
+  </url>
+  <url>
+    <loc>https://salarykit-theta.vercel.app/tools/job-offer-comparison</loc>
+  </url>
+  <url>
+    <loc>https://salarykit-theta.vercel.app/tools/salary-breakdown</loc>
+  </url>
+  <url>
+    <loc>https://salarykit-theta.vercel.app/contact</loc>
+  </url>
+  <url>
+    <loc>https://salarykit-theta.vercel.app/privacy</loc>
+  </url>
+</urlset>

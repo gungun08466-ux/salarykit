@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import {
   ArrowLeft,
   Briefcase,
@@ -9,12 +9,10 @@ import {
   TrendingUp,
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { pageMetadata } from '../data/pageMetadata.js'
 import { currencies, formatCurrency } from '../utils/currency.js'
 import { compareJobOffers } from '../utils/calculations.js'
-
-const pageTitle = 'Job Offer Comparison | SalaryKit'
-const pageDescription =
-  'Compare two job offers by annual base salary, bonus, additional compensation, and estimated monthly gross pay.'
+import { usePageMetadata } from '../hooks/usePageMetadata.js'
 
 const numericFields = [
   {
@@ -348,21 +346,7 @@ function JobOfferComparisonPage() {
   }))
   const [touched, setTouched] = useState({ a: {}, b: {} })
 
-  useEffect(() => {
-    const descriptionTag = document.querySelector('meta[name="description"]')
-    const previousTitle = document.title
-    const previousDescription = descriptionTag?.getAttribute('content')
-
-    document.title = pageTitle
-    descriptionTag?.setAttribute('content', pageDescription)
-
-    return () => {
-      document.title = previousTitle
-      if (descriptionTag && previousDescription !== null) {
-        descriptionTag.setAttribute('content', previousDescription)
-      }
-    }
-  }, [])
+  usePageMetadata(pageMetadata.jobOfferComparison)
 
   const {
     offerA,

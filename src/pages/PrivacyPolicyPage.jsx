@@ -1,26 +1,9 @@
-import { useEffect } from 'react'
 import { ShieldCheck } from 'lucide-react'
-
-const pageTitle = 'Privacy Policy | SalaryKit'
-const pageDescription =
-  'Learn what SalaryKit currently collects, how calculator inputs are processed, and how third-party services may apply.'
+import { pageMetadata } from '../data/pageMetadata.js'
+import { usePageMetadata } from '../hooks/usePageMetadata.js'
 
 function PrivacyPolicyPage() {
-  useEffect(() => {
-    const descriptionTag = document.querySelector('meta[name="description"]')
-    const previousTitle = document.title
-    const previousDescription = descriptionTag?.getAttribute('content')
-
-    document.title = pageTitle
-    descriptionTag?.setAttribute('content', pageDescription)
-
-    return () => {
-      document.title = previousTitle
-      if (descriptionTag && previousDescription !== null) {
-        descriptionTag.setAttribute('content', previousDescription)
-      }
-    }
-  }, [])
+  usePageMetadata(pageMetadata.privacy)
 
   const policySectionClassName =
     'rounded-2xl border border-violet-100 bg-white p-5 shadow-[0_8px_24px_rgba(16,22,58,0.04)] sm:p-7'

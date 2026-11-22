@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://salarykit-theta.vercel.app/sitemap.xml

@@ -9,8 +9,7 @@ const tools = [
   {
     slug: 'salary-hike',
     title: 'Salary Hike Calculator',
-    description:
-      'Find out how a raise could change your salary with a clear before-and-after estimate.',
+    description: 'Estimate pay after a raise.',
     icon: Calculator,
     iconStyle: 'bg-blue-600 text-white',
     cardStyle: 'border-blue-100 bg-gradient-to-br from-sky-50 to-blue-100',
@@ -19,8 +18,7 @@ const tools = [
   {
     slug: 'salary-converter',
     title: 'Salary Converter',
-    description:
-      'Convert amounts across six currencies using dated reference rates.',
+    description: 'Convert between currencies.',
     icon: ArrowLeftRight,
     iconStyle: 'bg-emerald-600 text-white',
     cardStyle: 'border-emerald-100 bg-gradient-to-br from-emerald-50 to-teal-100',
@@ -29,8 +27,7 @@ const tools = [
   {
     slug: 'job-offer-comparison',
     title: 'Job Offer Comparison',
-    description:
-      'Compare compensation details side by side before choosing an offer.',
+    description: 'Compare two job offers.',
     icon: Briefcase,
     iconStyle: 'bg-violet-600 text-white',
     cardStyle: 'border-violet-100 bg-gradient-to-br from-violet-50 to-indigo-100',
@@ -39,8 +36,7 @@ const tools = [
   {
     slug: 'salary-breakdown',
     title: 'Salary Breakdown Calculator',
-    description:
-      'See how an annual salary translates into common pay periods.',
+    description: 'View pay by time period.',
     icon: PieChart,
     iconStyle: 'bg-orange-500 text-white',
     cardStyle: 'border-orange-100 bg-gradient-to-br from-orange-50 to-amber-100',
