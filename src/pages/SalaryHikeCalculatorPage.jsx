@@ -170,7 +170,7 @@ function SalaryHikeCalculatorPage() {
           aria-hidden="true"
           className="pointer-events-none absolute -right-36 -top-40 -z-10 h-[28rem] w-[28rem] rounded-full bg-violet-200/50 blur-3xl"
         />
-        <div className="mx-auto max-w-7xl px-5 py-9 sm:px-8 sm:py-12">
+        <div className="mx-auto max-w-7xl px-5 py-4 sm:px-8 sm:py-5 lg:py-6">
           <Link
             to="/#tools"
             className="inline-flex items-center gap-2 rounded-md text-sm font-semibold text-slate-600 outline-none transition-colors hover:text-[#5428F5] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5428F5]"
@@ -178,23 +178,23 @@ function SalaryHikeCalculatorPage() {
             <ArrowLeft aria-hidden="true" className="h-4 w-4" />
             All salary tools
           </Link>
-          <div className="mt-7 max-w-3xl">
+          <div className="mt-3 max-w-3xl">
             <p className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-white/80 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#5428F5] shadow-sm">
               <Calculator aria-hidden="true" className="h-4 w-4" />
               Salary calculator
             </p>
-            <h1 className="mt-4 text-3xl font-bold tracking-[-0.04em] text-[#10163A] sm:text-4xl lg:text-5xl">
+            <h1 className="mt-2 text-3xl font-bold tracking-[-0.04em] text-[#10163A] sm:text-4xl lg:text-5xl">
               Salary Hike Calculator
             </h1>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
-              See how a raise could change your annual and monthly salary.
-              Enter your details to get a clear gross-pay estimate.
+            <p className="mt-2 max-w-2xl text-sm leading-5 text-slate-700 sm:text-base sm:leading-6">
+              Estimate a raise, new annual salary, and monthly increase from
+              your current gross pay.
             </p>
           </div>
         </div>
       </section>
 
-      <div className="mx-auto grid max-w-7xl gap-7 px-5 py-8 sm:px-8 sm:py-12 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-8">
+      <div className="mx-auto grid max-w-7xl gap-6 px-5 py-4 sm:px-8 sm:py-5 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-8 lg:py-6">
         <section
           aria-labelledby="calculator-inputs-heading"
           className="h-fit rounded-3xl border border-violet-100 bg-white p-5 shadow-[0_16px_48px_rgba(16,22,58,0.08)] sm:p-7 lg:sticky lg:top-24"
@@ -217,7 +217,7 @@ function SalaryHikeCalculatorPage() {
           </div>
 
           <form
-            className="mt-7 space-y-5"
+            className="mt-5 space-y-5"
             noValidate
             onSubmit={(event) => event.preventDefault()}
           >

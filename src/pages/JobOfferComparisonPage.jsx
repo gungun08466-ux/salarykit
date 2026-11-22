@@ -392,7 +392,7 @@ function JobOfferComparisonPage() {
           aria-hidden="true"
           className="pointer-events-none absolute -right-36 -top-40 -z-10 h-[28rem] w-[28rem] rounded-full bg-violet-200/50 blur-3xl"
         />
-        <div className="mx-auto max-w-7xl px-5 py-9 sm:px-8 sm:py-12">
+        <div className="mx-auto max-w-7xl px-5 py-4 sm:px-8 sm:py-5 lg:py-6">
           <Link
             to="/#tools"
             className="inline-flex items-center gap-2 rounded-md text-sm font-semibold text-slate-600 outline-none transition-colors hover:text-[#5428F5] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5428F5]"
@@ -400,50 +400,30 @@ function JobOfferComparisonPage() {
             <ArrowLeft aria-hidden="true" className="h-4 w-4" />
             All salary tools
           </Link>
-          <div className="mt-7 max-w-3xl">
+          <div className="mt-3 max-w-3xl">
             <p className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-white/80 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#5428F5] shadow-sm">
               <Briefcase aria-hidden="true" className="h-4 w-4" />
               Career tool
             </p>
-            <h1 className="mt-4 text-3xl font-bold tracking-[-0.04em] text-[#10163A] sm:text-4xl lg:text-5xl">
+            <h1 className="mt-2 text-3xl font-bold tracking-[-0.04em] text-[#10163A] sm:text-4xl lg:text-5xl">
               Job Offer Comparison
             </h1>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
-              Compare the full compensation picture side by side. Add annual
-              salary, bonuses, and other compensation to see clear gross
-              estimates for both offers.
+            <p className="mt-2 max-w-2xl text-sm leading-5 text-slate-700 sm:text-base sm:leading-6">
+              Compare annual and monthly gross compensation for two offers.
             </p>
           </div>
         </div>
       </section>
 
-      <div className="mx-auto max-w-7xl px-5 py-8 sm:px-8 sm:py-12">
+      <div className="mx-auto max-w-7xl px-5 py-4 sm:px-8 sm:py-5 lg:py-6">
         <section aria-labelledby="offer-inputs-heading">
-          <div className="mb-5">
-            <p className="text-xs font-bold uppercase tracking-[0.17em] text-[#5428F5]">
-              Compare offers
-            </p>
+          <div className="mb-3">
             <h2
               id="offer-inputs-heading"
-              className="mt-2 text-2xl font-bold tracking-tight text-[#10163A] sm:text-3xl"
+              className="text-2xl font-bold tracking-tight text-[#10163A] sm:text-3xl"
             >
               Enter offer details
             </h2>
-          </div>
-          <div className="mb-6 flex items-start gap-3 rounded-2xl border border-violet-200 bg-gradient-to-br from-white to-violet-50 p-4 text-sm leading-6 text-[#10163A] shadow-sm sm:p-5">
-            <Info
-              aria-hidden="true"
-              className="mt-0.5 h-5 w-5 shrink-0 text-[#5428F5]"
-            />
-            <div>
-              <p className="font-bold">
-                Use the same currency for both offers
-              </p>
-              <p id="currency-match-note" className="mt-1 text-slate-700">
-                This tool does not convert currencies. Results are withheld
-                until both offers use the same currency.
-              </p>
-            </div>
           </div>
 
           <div className="grid gap-5 md:grid-cols-2">
@@ -465,6 +445,22 @@ function JobOfferComparisonPage() {
               onChange={updateOffer}
               onBlur={markTouched}
             />
+          </div>
+
+          <div className="mt-4 flex items-start gap-3 rounded-2xl border border-violet-200 bg-gradient-to-br from-white to-violet-50 p-4 text-sm leading-6 text-[#10163A] shadow-sm sm:p-5">
+            <Info
+              aria-hidden="true"
+              className="mt-0.5 h-5 w-5 shrink-0 text-[#5428F5]"
+            />
+            <div>
+              <p className="font-bold">
+                Use the same currency for both offers
+              </p>
+              <p id="currency-match-note" className="mt-1 text-slate-700">
+                This tool does not convert currencies. Results are withheld
+                until both offers use the same currency.
+              </p>
+            </div>
           </div>
 
           <button

@@ -65,7 +65,7 @@ function SalaryHikeGuidePage() {
           aria-hidden="true"
           className="pointer-events-none absolute -right-36 -top-40 -z-10 h-[28rem] w-[28rem] rounded-full bg-violet-200/50 blur-3xl"
         />
-        <div className="mx-auto max-w-7xl px-5 py-9 sm:px-8 sm:py-12">
+        <div className="mx-auto max-w-7xl px-5 py-4 sm:px-8 sm:py-5 lg:py-6">
           <Link
             to="/#tools"
             className="inline-flex items-center gap-2 rounded-md text-sm font-semibold text-slate-600 outline-none transition-colors hover:text-[#5428F5] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5428F5]"
@@ -73,22 +73,21 @@ function SalaryHikeGuidePage() {
             <ArrowLeft aria-hidden="true" className="h-4 w-4" />
             All salary tools
           </Link>
-          <div className="mt-7 max-w-3xl">
+          <div className="mt-3 max-w-3xl">
             <p className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-white/80 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#5428F5] shadow-sm">
               <BookOpen aria-hidden="true" className="h-4 w-4" />
               Salary &amp; career guide
             </p>
-            <h1 className="mt-4 text-3xl font-bold tracking-[-0.04em] text-[#10163A] sm:text-4xl lg:text-5xl">
-              Salary Hike Guide: Calculate and Negotiate Your Raise
+            <h1 className="mt-2 text-3xl font-bold tracking-[-0.04em] text-[#10163A] sm:text-4xl lg:text-5xl">
+              Salary Hike Guide
             </h1>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
-              Learn the salary hike percentage formula, see annual and monthly
-              raise examples, and prepare for a thoughtful compensation
-              conversation.
+            <p className="mt-2 max-w-2xl text-sm leading-5 text-slate-700 sm:text-base sm:leading-6">
+              Calculate a raise, compare examples, and prepare to discuss your
+              salary.
             </p>
             <Link
               to="/tools/salary-hike"
-              className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#5428F5] px-5 py-3 text-sm font-semibold text-white shadow-sm outline-none transition-colors hover:bg-[#4320D0] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5428F5]"
+              className="mt-4 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#5428F5] px-5 py-3 text-sm font-semibold text-white shadow-sm outline-none transition-colors hover:bg-[#4320D0] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5428F5]"
             >
               Open Salary Hike Calculator
               <ArrowRight aria-hidden="true" className="h-4 w-4" />
@@ -97,7 +96,7 @@ function SalaryHikeGuidePage() {
         </div>
       </section>
 
-      <article className="mx-auto max-w-7xl space-y-6 px-5 py-8 sm:px-8 sm:py-12">
+      <article className="mx-auto max-w-7xl space-y-5 px-5 py-4 sm:px-8 sm:py-5 lg:py-6">
         <section
           aria-labelledby="hike-formula-heading"
           className="rounded-3xl border border-violet-100 bg-white p-5 shadow-[0_12px_36px_rgba(16,22,58,0.05)] sm:p-8"

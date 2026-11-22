@@ -177,7 +177,7 @@ function SalaryConverterPage() {
           aria-hidden="true"
           className="pointer-events-none absolute -right-36 -top-40 -z-10 h-[28rem] w-[28rem] rounded-full bg-violet-200/50 blur-3xl"
         />
-        <div className="mx-auto max-w-7xl px-5 py-9 sm:px-8 sm:py-12">
+        <div className="mx-auto max-w-7xl px-5 py-4 sm:px-8 sm:py-5 lg:py-6">
           <Link
             to="/#tools"
             className="inline-flex items-center gap-2 rounded-md text-sm font-semibold text-slate-600 outline-none transition-colors hover:text-[#5428F5] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5428F5]"
@@ -185,24 +185,22 @@ function SalaryConverterPage() {
             <ArrowLeft aria-hidden="true" className="h-4 w-4" />
             All salary tools
           </Link>
-          <div className="mt-7 max-w-3xl">
+          <div className="mt-3 max-w-3xl">
             <p className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-white/80 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#5428F5] shadow-sm">
               <ArrowLeftRight aria-hidden="true" className="h-4 w-4" />
               Salary tool
             </p>
-            <h1 className="mt-4 text-3xl font-bold tracking-[-0.04em] text-[#10163A] sm:text-4xl lg:text-5xl">
+            <h1 className="mt-2 text-3xl font-bold tracking-[-0.04em] text-[#10163A] sm:text-4xl lg:text-5xl">
               Salary Converter
             </h1>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
-              Compare salary amounts across currencies with dated Frankfurter
-              reference rates. Your estimate updates when you change the amount
-              or currency pair.
+            <p className="mt-2 max-w-2xl text-sm leading-5 text-slate-700 sm:text-base sm:leading-6">
+              Convert salary amounts using dated Frankfurter reference rates.
             </p>
           </div>
         </div>
       </section>
 
-      <div className="mx-auto max-w-6xl px-5 py-8 sm:px-8 sm:py-12">
+      <div className="mx-auto max-w-6xl px-5 py-4 sm:px-8 sm:py-5 lg:py-6">
         <section
           aria-labelledby="converter-inputs-heading"
           className="rounded-3xl border border-violet-100 bg-white p-5 shadow-[0_16px_48px_rgba(16,22,58,0.08)] sm:p-7 lg:p-8"
@@ -225,7 +223,7 @@ function SalaryConverterPage() {
           </div>
 
           <form
-            className="mt-7"
+            className="mt-5"
             noValidate
             onSubmit={(event) => event.preventDefault()}
           >
