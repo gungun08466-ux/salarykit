@@ -502,6 +502,92 @@ function SalaryBreakdownCalculatorPage() {
           </details>
         </div>
       </div>
+
+      <section
+        aria-labelledby="salary-breakdown-guide-heading"
+        className="mx-auto max-w-7xl px-5 pb-12 sm:px-8 sm:pb-16"
+      >
+        <div className="rounded-3xl border border-violet-100 bg-white p-5 shadow-[0_12px_36px_rgba(16,22,58,0.05)] sm:p-8">
+          <h2
+            id="salary-breakdown-guide-heading"
+            className="text-2xl font-bold tracking-tight text-[#10163A] sm:text-3xl"
+          >
+            Understanding your salary breakdown
+          </h2>
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
+            <article>
+              <h3 className="font-bold text-[#10163A]">How it works</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Enter annual gross pay and your usual work schedule. The
+                calculator estimates monthly and weekly amounts, then uses your
+                working days and hours to estimate daily and hourly gross pay.
+              </p>
+            </article>
+            <article>
+              <h3 className="font-bold text-[#10163A]">Practical example</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                An annual salary of $104,000 is about $8,666.67 per month or
+                $2,000 per week. With five working days and eight hours per day,
+                the estimates are $400 per day and $50 per hour.
+              </p>
+            </article>
+            <article>
+              <h3 className="font-bold text-[#10163A]">Interpreting the result</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Daily and hourly values depend on the schedule you enter. They
+                are gross estimates for comparing pay periods, not a payslip,
+                tax calculation, or promise of actual earnings.
+              </p>
+            </article>
+          </div>
+          <div className="mt-7 border-t border-slate-100 pt-6">
+            <h3 className="text-lg font-bold text-[#10163A]">
+              Salary breakdown FAQs
+            </h3>
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              <details className="rounded-2xl border border-slate-200 bg-[#F8FAFF] px-4 py-4">
+                <summary className="cursor-pointer font-semibold text-[#10163A] outline-none focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5428F5]">
+                  How are weekly and monthly pay estimated?
+                </summary>
+                <p className="mt-3 text-sm leading-6 text-slate-700">
+                  Annual gross salary is divided by 52 for a weekly estimate
+                  and by 12 for a monthly estimate. These use fixed annual
+                  periods rather than a specific payroll calendar.
+                </p>
+              </details>
+              <details className="rounded-2xl border border-slate-200 bg-[#F8FAFF] px-4 py-4">
+                <summary className="cursor-pointer font-semibold text-[#10163A] outline-none focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5428F5]">
+                  What do working days and hours change?
+                </summary>
+                <p className="mt-3 text-sm leading-6 text-slate-700">
+                  Working days per week are used to estimate daily pay, and
+                  working hours per day are used to estimate hourly pay. They
+                  do not change the annual, monthly, or weekly figures.
+                </p>
+              </details>
+              <details className="rounded-2xl border border-slate-200 bg-[#F8FAFF] px-4 py-4">
+                <summary className="cursor-pointer font-semibold text-[#10163A] outline-none focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5428F5]">
+                  Does the salary breakdown include taxes?
+                </summary>
+                <p className="mt-3 text-sm leading-6 text-slate-700">
+                  No. The results are gross estimates before taxes and
+                  deductions; the calculator does not estimate take-home pay.
+                </p>
+              </details>
+              <details className="rounded-2xl border border-slate-200 bg-[#F8FAFF] px-4 py-4">
+                <summary className="cursor-pointer font-semibold text-[#10163A] outline-none focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5428F5]">
+                  Can I use a nonstandard work schedule?
+                </summary>
+                <p className="mt-3 text-sm leading-6 text-slate-700">
+                  Yes. Enter your usual days per week and hours per day. The
+                  calculator accepts decimal values, with days from 1 to 7 and
+                  hours greater than 0 up to 24.
+                </p>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

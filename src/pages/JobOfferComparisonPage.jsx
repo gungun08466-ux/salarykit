@@ -620,6 +620,95 @@ function JobOfferComparisonPage() {
           </details>
         </section>
       </div>
+
+      <section
+        aria-labelledby="job-offer-guide-heading"
+        className="mx-auto max-w-7xl px-5 pb-12 sm:px-8 sm:pb-16"
+      >
+        <div className="rounded-3xl border border-violet-100 bg-white p-5 shadow-[0_12px_36px_rgba(16,22,58,0.05)] sm:p-8">
+          <h2
+            id="job-offer-guide-heading"
+            className="text-2xl font-bold tracking-tight text-[#10163A] sm:text-3xl"
+          >
+            How to compare job offers
+          </h2>
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
+            <article>
+              <h3 className="font-bold text-[#10163A]">How it works</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Enter each offer’s annual base salary, bonus, and other annual
+                compensation. Select the same currency for both offers. The
+                calculator compares annual totals and estimates monthly gross
+                amounts.
+              </p>
+            </article>
+            <article>
+              <h3 className="font-bold text-[#10163A]">Practical example</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Offer A with $100,000 base pay, a $10,000 bonus, and $5,000
+                additional compensation totals $115,000. Offer B at $105,000
+                base plus a $5,000 bonus totals $110,000. Offer A is $5,000
+                higher, about 4.55% above the lower total.
+              </p>
+            </article>
+            <article>
+              <h3 className="font-bold text-[#10163A]">Interpreting the result</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Compare the annual total, monthly estimate, and difference
+                together. These are gross amounts; benefits, taxes, costs, and
+                compensation not entered here are not included.
+              </p>
+            </article>
+          </div>
+          <div className="mt-7 border-t border-slate-100 pt-6">
+            <h3 className="text-lg font-bold text-[#10163A]">
+              Job offer comparison FAQs
+            </h3>
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              <details className="rounded-2xl border border-slate-200 bg-[#F8FAFF] px-4 py-4">
+                <summary className="cursor-pointer font-semibold text-[#10163A] outline-none focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5428F5]">
+                  Why must both offers use the same currency?
+                </summary>
+                <p className="mt-3 text-sm leading-6 text-slate-700">
+                  This calculator compares the entered amounts directly and
+                  does not convert currencies. Matching currencies keeps the
+                  annual and monthly comparison meaningful.
+                </p>
+              </details>
+              <details className="rounded-2xl border border-slate-200 bg-[#F8FAFF] px-4 py-4">
+                <summary className="cursor-pointer font-semibold text-[#10163A] outline-none focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5428F5]">
+                  What if I leave bonus or additional pay blank?
+                </summary>
+                <p className="mt-3 text-sm leading-6 text-slate-700">
+                  Blank optional compensation fields are treated as zero. Enter
+                  annual estimates for any amounts you want included in the
+                  comparison.
+                </p>
+              </details>
+              <details className="rounded-2xl border border-slate-200 bg-[#F8FAFF] px-4 py-4">
+                <summary className="cursor-pointer font-semibold text-[#10163A] outline-none focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5428F5]">
+                  How is the percentage difference calculated?
+                </summary>
+                <p className="mt-3 text-sm leading-6 text-slate-700">
+                  The annual total difference is divided by the lower total
+                  offer. This expresses how much higher the larger total is
+                  relative to the smaller one.
+                </p>
+              </details>
+              <details className="rounded-2xl border border-slate-200 bg-[#F8FAFF] px-4 py-4">
+                <summary className="cursor-pointer font-semibold text-[#10163A] outline-none focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5428F5]">
+                  What happens if the offers have the same total?
+                </summary>
+                <p className="mt-3 text-sm leading-6 text-slate-700">
+                  The annual difference and percentage difference are both
+                  zero, and neither offer is marked as higher. You can compare
+                  the entered compensation details side by side.
+                </p>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

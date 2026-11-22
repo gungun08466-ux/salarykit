@@ -423,6 +423,94 @@ function SalaryHikeCalculatorPage() {
           </details>
         </section>
       </div>
+
+      <section
+        aria-labelledby="salary-hike-guide-heading"
+        className="mx-auto max-w-7xl px-5 pb-12 sm:px-8 sm:pb-16"
+      >
+        <div className="rounded-3xl border border-violet-100 bg-white p-5 shadow-[0_12px_36px_rgba(16,22,58,0.05)] sm:p-8">
+          <h2
+            id="salary-hike-guide-heading"
+            className="text-2xl font-bold tracking-tight text-[#10163A] sm:text-3xl"
+          >
+            Understand your salary hike estimate
+          </h2>
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
+            <article>
+              <h3 className="font-bold text-[#10163A]">How it works</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Enter your current annual gross salary, select INR or USD, and
+                add the proposed raise percentage. The calculator estimates
+                your additional annual pay and new salary, then shows monthly
+                equivalents.
+              </p>
+            </article>
+            <article>
+              <h3 className="font-bold text-[#10163A]">Practical example</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                With an annual salary of ₹800,000 and a 10% hike, the increase
+                is ₹80,000 and the new annual salary is ₹880,000. The estimated
+                monthly increase is about ₹6,666.67.
+              </p>
+            </article>
+            <article>
+              <h3 className="font-bold text-[#10163A]">Interpreting the result</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Compare the new annual salary with your current gross pay.
+                Monthly figures divide annual amounts by 12; they do not
+                account for taxes, deductions, or a particular payroll
+                schedule.
+              </p>
+            </article>
+          </div>
+          <div className="mt-7 border-t border-slate-100 pt-6">
+            <h3 className="text-lg font-bold text-[#10163A]">
+              Salary hike calculator FAQs
+            </h3>
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              <details className="rounded-2xl border border-slate-200 bg-[#F8FAFF] px-4 py-4">
+                <summary className="cursor-pointer font-semibold text-[#10163A] outline-none focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5428F5]">
+                  What does the hike percentage apply to?
+                </summary>
+                <p className="mt-3 text-sm leading-6 text-slate-700">
+                  It applies to the current annual salary you enter. For
+                  example, a 10% increase on ₹800,000 adds ₹80,000 to annual
+                  gross pay.
+                </p>
+              </details>
+              <details className="rounded-2xl border border-slate-200 bg-[#F8FAFF] px-4 py-4">
+                <summary className="cursor-pointer font-semibold text-[#10163A] outline-none focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5428F5]">
+                  Does this calculator show take-home salary?
+                </summary>
+                <p className="mt-3 text-sm leading-6 text-slate-700">
+                  No. It estimates gross salary before taxes and deductions;
+                  your actual take-home pay depends on your payroll and
+                  personal circumstances.
+                </p>
+              </details>
+              <details className="rounded-2xl border border-slate-200 bg-[#F8FAFF] px-4 py-4">
+                <summary className="cursor-pointer font-semibold text-[#10163A] outline-none focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5428F5]">
+                  Can I calculate a 0% salary increase?
+                </summary>
+                <p className="mt-3 text-sm leading-6 text-slate-700">
+                  Yes. Enter 0 to see the current annual salary carried through
+                  as the new salary, with no additional increase.
+                </p>
+              </details>
+              <details className="rounded-2xl border border-slate-200 bg-[#F8FAFF] px-4 py-4">
+                <summary className="cursor-pointer font-semibold text-[#10163A] outline-none focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5428F5]">
+                  Why may my monthly pay differ from the estimate?
+                </summary>
+                <p className="mt-3 text-sm leading-6 text-slate-700">
+                  The monthly estimate is annual gross salary divided by 12.
+                  Pay dates, deductions, bonuses, and payroll rules can make an
+                  actual payslip different.
+                </p>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

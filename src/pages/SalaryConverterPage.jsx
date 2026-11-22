@@ -526,6 +526,93 @@ function SalaryConverterPage() {
           </p>
         </details>
       </div>
+
+      <section
+        aria-labelledby="salary-converter-guide-heading"
+        className="mx-auto max-w-6xl px-5 pb-12 sm:px-8 sm:pb-16"
+      >
+        <div className="rounded-3xl border border-violet-100 bg-white p-5 shadow-[0_12px_36px_rgba(16,22,58,0.05)] sm:p-8">
+          <h2
+            id="salary-converter-guide-heading"
+            className="text-2xl font-bold tracking-tight text-[#10163A] sm:text-3xl"
+          >
+            Using the salary converter
+          </h2>
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
+            <article>
+              <h3 className="font-bold text-[#10163A]">How it works</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Choose a source and target currency, then enter the salary
+                amount. The converter applies the dated Frankfurter reference
+                rate for that pair; changing the amount reuses the fetched
+                rate.
+              </p>
+            </article>
+            <article>
+              <h3 className="font-bold text-[#10163A]">Practical example</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                To estimate a salary of 1,000 USD in INR, select USD as the
+                source and INR as the target. The displayed result uses the
+                fetched pair rate and shows its date; the salary amount is
+                processed in your browser.
+              </p>
+            </article>
+            <article>
+              <h3 className="font-bold text-[#10163A]">Interpreting the result</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Treat the amount as a reference estimate, not a live payment
+                quote. Banks and other providers may use different rates or
+                fees, and the date shown is the API’s last available rate date.
+              </p>
+            </article>
+          </div>
+          <div className="mt-7 border-t border-slate-100 pt-6">
+            <h3 className="text-lg font-bold text-[#10163A]">
+              Salary converter FAQs
+            </h3>
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              <details className="rounded-2xl border border-slate-200 bg-[#F8FAFF] px-4 py-4">
+                <summary className="cursor-pointer font-semibold text-[#10163A] outline-none focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5428F5]">
+                  Which currencies can I convert?
+                </summary>
+                <p className="mt-3 text-sm leading-6 text-slate-700">
+                  The converter supports INR, USD, EUR, GBP, CAD, and AUD. You
+                  can select any supported source and target pair.
+                </p>
+              </details>
+              <details className="rounded-2xl border border-slate-200 bg-[#F8FAFF] px-4 py-4">
+                <summary className="cursor-pointer font-semibold text-[#10163A] outline-none focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5428F5]">
+                  Are the exchange rates live transaction rates?
+                </summary>
+                <p className="mt-3 text-sm leading-6 text-slate-700">
+                  No. They are dated reference rates from Frankfurter, not live
+                  transaction quotes, and may differ from rates offered by a
+                  financial provider.
+                </p>
+              </details>
+              <details className="rounded-2xl border border-slate-200 bg-[#F8FAFF] px-4 py-4">
+                <summary className="cursor-pointer font-semibold text-[#10163A] outline-none focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5428F5]">
+                  Does changing the amount fetch another rate?
+                </summary>
+                <p className="mt-3 text-sm leading-6 text-slate-700">
+                  No. The current rate is reused while the currency pair stays
+                  the same. Successful rates are cached in memory for up to 12
+                  hours, and Refresh requests a new available rate.
+                </p>
+              </details>
+              <details className="rounded-2xl border border-slate-200 bg-[#F8FAFF] px-4 py-4">
+                <summary className="cursor-pointer font-semibold text-[#10163A] outline-none focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5428F5]">
+                  What happens when both currencies are the same?
+                </summary>
+                <p className="mt-3 text-sm leading-6 text-slate-700">
+                  The conversion uses a rate of 1, so the amount stays
+                  unchanged and no exchange-rate request is needed.
+                </p>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
