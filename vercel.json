@@ -6,6 +6,10 @@
       "destination": "/tools/salary-hike/index.html"
     },
     {
+      "source": "/guides/salary-hike-guide",
+      "destination": "/guides/salary-hike-guide/index.html"
+    },
+    {
       "source": "/tools/salary-converter",
       "destination": "/tools/salary-converter/index.html"
     },

@@ -101,6 +101,7 @@ salarykit/
     │   ├── PrivacyPolicyPage.jsx
     │   ├── SalaryBreakdownCalculatorPage.jsx
     │   ├── SalaryConverterPage.jsx
+    │   ├── SalaryHikeGuidePage.jsx
     │   └── SalaryHikeCalculatorPage.jsx
     └── utils/
         ├── exchangeRates.js

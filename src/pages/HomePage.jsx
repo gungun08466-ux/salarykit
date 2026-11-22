@@ -107,6 +107,16 @@ function HomePage() {
               </div>
             ))}
           </div>
+          <p className="mt-5 text-center text-sm text-slate-600">
+            Planning a raise?{' '}
+            <Link
+              to="/guides/salary-hike-guide"
+              className="inline-flex items-center gap-1 font-semibold text-[#5428F5] underline decoration-violet-300 underline-offset-4 outline-none hover:text-[#4320D0] focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5428F5]"
+            >
+              Read the salary hike guide
+              <ArrowRight aria-hidden="true" className="h-4 w-4" />
+            </Link>
+          </p>
         </div>
       </section>
 

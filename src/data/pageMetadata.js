@@ -13,6 +13,12 @@ export const pageMetadata = {
       'Estimate your salary increase, new annual pay, and monthly salary after a hike. Results show gross salary before taxes and deductions.',
     path: '/tools/salary-hike',
   },
+  salaryHikeGuide: {
+    title: 'Salary Hike Guide: Formula, Examples & Negotiation | SalaryKit',
+    description:
+      'Learn the salary hike percentage formula, compare 10%, 20%, and 30% raise examples, and prepare a practical salary negotiation.',
+    path: '/guides/salary-hike-guide',
+  },
   salaryConverter: {
     title: 'Salary Converter | SalaryKit',
     description:
