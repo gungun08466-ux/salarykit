@@ -19,6 +19,12 @@ export const pageMetadata = {
       'Learn the salary hike percentage formula, compare 10%, 20%, and 30% raise examples, and prepare a practical salary negotiation.',
     path: '/guides/salary-hike-guide',
   },
+  salaryNegotiationGuide: {
+    title: 'Salary Negotiation Guide: Research, Offers & Emails | SalaryKit',
+    description:
+      'Learn how to research market pay, set a salary target, negotiate job offers, respond to low offers, and write clear negotiation emails.',
+    path: '/guides/salary-negotiation-guide',
+  },
   salaryConverter: {
     title: 'Salary Converter | SalaryKit',
     description:

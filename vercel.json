@@ -10,6 +10,10 @@
       "destination": "/guides/salary-hike-guide/index.html"
     },
     {
+      "source": "/guides/salary-negotiation-guide",
+      "destination": "/guides/salary-negotiation-guide/index.html"
+    },
+    {
       "source": "/tools/salary-converter",
       "destination": "/tools/salary-converter/index.html"
     },

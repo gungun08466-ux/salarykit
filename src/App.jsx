@@ -7,6 +7,7 @@ import JobOfferComparisonPage from './pages/JobOfferComparisonPage.jsx'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage.jsx'
 import SalaryBreakdownCalculatorPage from './pages/SalaryBreakdownCalculatorPage.jsx'
 import SalaryHikeCalculatorPage from './pages/SalaryHikeCalculatorPage.jsx'
+import SalaryNegotiationGuidePage from './pages/SalaryNegotiationGuidePage.jsx'
 import SalaryHikeGuidePage from './pages/SalaryHikeGuidePage.jsx'
 import SalaryConverterPage from './pages/SalaryConverterPage.jsx'
 
@@ -22,6 +23,10 @@ function App() {
         <Route
           path="/guides/salary-hike-guide"
           element={<SalaryHikeGuidePage />}
+        />
+        <Route
+          path="/guides/salary-negotiation-guide"
+          element={<SalaryNegotiationGuidePage />}
         />
         <Route
           path="/tools/salary-converter"
