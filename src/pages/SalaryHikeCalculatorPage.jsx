@@ -18,6 +18,27 @@ const currencySettings = {
   USD: { locale: 'en-US', currency: 'USD', symbol: '$' },
 }
 
+const salaryHikeExamples = [
+  {
+    hike: '5%',
+    annualIncrease: '₹40,000',
+    newAnnualSalary: '₹8,40,000',
+    monthlyIncrease: '₹3,333.33',
+  },
+  {
+    hike: '10%',
+    annualIncrease: '₹80,000',
+    newAnnualSalary: '₹8,80,000',
+    monthlyIncrease: '₹6,666.67',
+  },
+  {
+    hike: '15%',
+    annualIncrease: '₹1,20,000',
+    newAnnualSalary: '₹9,20,000',
+    monthlyIncrease: '₹10,000',
+  },
+]
+
 function ResultCard({ label, value, description, featured = false, accent = false }) {
   const Icon = featured ? Calculator : TrendingUp
 
@@ -435,6 +456,11 @@ function SalaryHikeCalculatorPage() {
           >
             Understand your salary hike estimate
           </h2>
+          <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-700 sm:text-base">
+            A salary hike is also commonly called a salary increment. This
+            calculator applies a proposed percentage increase to your current
+            annual gross salary to estimate your new salary.
+          </p>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             <article>
               <h3 className="font-bold text-[#10163A]">How it works</h3>
@@ -462,6 +488,72 @@ function SalaryHikeCalculatorPage() {
                 schedule.
               </p>
             </article>
+          </div>
+          <div className="mt-7 border-t border-slate-100 pt-6">
+            <h3 className="text-lg font-bold text-[#10163A]">
+              Compare salary hike examples
+            </h3>
+            <p className="mt-2 text-sm leading-6 text-slate-700">
+              Starting with a current annual gross salary of ₹8,00,000:
+            </p>
+            <div
+              aria-label="Salary hike comparison table"
+              className="mt-4 overflow-x-auto rounded-2xl border border-slate-200"
+              role="region"
+              tabIndex={0}
+            >
+              <table className="w-full min-w-[36rem] text-left text-sm">
+                <caption className="sr-only">
+                  Salary hike estimates based on a current annual gross salary
+                  of ₹8,00,000.
+                </caption>
+                <thead className="bg-[#F8FAFF] text-[#10163A]">
+                  <tr>
+                    <th className="px-4 py-3 font-semibold" scope="col">
+                      Hike
+                    </th>
+                    <th className="px-4 py-3 font-semibold" scope="col">
+                      Annual increase
+                    </th>
+                    <th className="px-4 py-3 font-semibold" scope="col">
+                      New annual salary
+                    </th>
+                    <th className="px-4 py-3 font-semibold" scope="col">
+                      Monthly increase
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 bg-white text-slate-700">
+                  {salaryHikeExamples.map((example) => (
+                    <tr key={example.hike}>
+                      <th
+                        className="px-4 py-3 font-semibold text-[#10163A]"
+                        scope="row"
+                      >
+                        {example.hike}
+                      </th>
+                      <td className="px-4 py-3">{example.annualIncrease}</td>
+                      <td className="px-4 py-3">{example.newAnnualSalary}</td>
+                      <td className="px-4 py-3">{example.monthlyIncrease}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-3 text-sm leading-6 text-slate-700">
+              These are gross salary estimates. Monthly amounts are annual
+              amounts divided by 12. Actual take-home salary may differ because
+              of taxes and deductions.
+            </p>
+            <p className="mt-4 text-sm leading-6 text-slate-700">
+              <Link
+                to={pageMetadata.salaryHikeGuide.path}
+                className="font-semibold text-[#5428F5] underline decoration-violet-300 underline-offset-4 outline-none hover:text-[#4320D0] focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5428F5]"
+              >
+                Read our Salary Hike Guide to understand salary increase
+                formulas and examples.
+              </Link>
+            </p>
           </div>
           <div className="mt-7 border-t border-slate-100 pt-6">
             <h3 className="text-lg font-bold text-[#10163A]">
