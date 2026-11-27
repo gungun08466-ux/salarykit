@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Route, Routes } from 'react-router-dom'
 import SiteLayout from './components/SiteLayout.jsx'
 import HomePage from './pages/HomePage.jsx'
@@ -11,9 +12,9 @@ import SalaryNegotiationGuidePage from './pages/SalaryNegotiationGuidePage.jsx'
 import SalaryHikeGuidePage from './pages/SalaryHikeGuidePage.jsx'
 import SalaryConverterPage from './pages/SalaryConverterPage.jsx'
 
-function App() {
+function App({ footerYear }) {
   return (
-    <SiteLayout>
+    <SiteLayout footerYear={footerYear}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route

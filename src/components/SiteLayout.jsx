@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ArrowRight, Menu, TrendingUp, X } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
@@ -116,7 +116,7 @@ function SiteHeader() {
   )
 }
 
-function SiteFooter() {
+function SiteFooter({ year }) {
   return (
     <footer className="bg-[#111827] text-slate-300">
       <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8">
@@ -142,7 +142,7 @@ function SiteFooter() {
           </nav>
         </div>
         <div className="flex flex-col gap-2 pt-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} SalaryKit. All rights reserved.</p>
+          <p>© {year} SalaryKit. All rights reserved.</p>
           <p>Salary &amp; career toolkit for compensation decisions worldwide.</p>
         </div>
       </div>
@@ -150,7 +150,17 @@ function SiteFooter() {
   )
 }
 
-function SiteLayout({ children }) {
+function SiteLayout({ children, footerYear }) {
+  const [year, setYear] = useState(
+    footerYear ?? new Date().getFullYear(),
+  )
+
+  useEffect(() => {
+    if (footerYear !== undefined) {
+      setYear(new Date().getFullYear())
+    }
+  }, [footerYear])
+
   return (
     <div className="flex min-h-screen flex-col bg-[#F8FAFC] text-[#111827]">
       <a
@@ -163,7 +173,7 @@ function SiteLayout({ children }) {
       <main id="main-content" className="flex-1" tabIndex={-1}>
         {children}
       </main>
-      <SiteFooter />
+      <SiteFooter year={year} />
     </div>
   )
 }

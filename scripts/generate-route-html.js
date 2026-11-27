@@ -1,11 +1,16 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import React from 'react'
+import { renderToString } from 'react-dom/server'
+import { StaticRouter } from 'react-router-dom'
+import { createServer } from 'vite'
 import { pageMetadata, siteOrigin } from '../src/data/pageMetadata.js'
 
 const projectRoot = fileURLToPath(new URL('../', import.meta.url))
 const outputDirectory = path.join(projectRoot, 'dist')
 const sourceHtmlPath = path.join(outputDirectory, 'index.html')
+const salaryHikePath = pageMetadata.salaryHike.path
 
 function escapeHtml(value) {
   return value.replace(/[&<>"']/g, (character) => {
@@ -125,23 +130,80 @@ function applyMetadata(html, metadata) {
   return result
 }
 
+function addPrerenderedContent(html, markup, footerYear) {
+  const rootPattern = /<div id="root"><\/div>/g
+  const matchingRoots = Array.from(html.matchAll(rootPattern))
+
+  if (matchingRoots.length !== 1) {
+    throw new Error(
+      `Expected one empty root element, found ${matchingRoots.length}.`,
+    )
+  }
+
+  const rootElement = `<div id="root" data-prerendered-route="${salaryHikePath}" data-footer-year="${escapeHtml(footerYear)}">${markup}</div>`
+
+  return html.replace(rootPattern, rootElement)
+}
+
+async function renderSalaryHikePage(viteServer) {
+  const { default: App } = await viteServer.ssrLoadModule('/src/App.jsx')
+  const footerYear = String(new Date().getFullYear())
+  const markup = renderToString(
+    React.createElement(
+      React.StrictMode,
+      null,
+      React.createElement(
+        StaticRouter,
+        { location: salaryHikePath },
+        React.createElement(App, { footerYear }),
+      ),
+    ),
+  )
+
+  if (
+    !markup.includes('<h1') ||
+    !markup.includes('Salary Hike Calculator') ||
+    !markup.includes('Current annual salary') ||
+    !markup.includes('Salary hike calculator FAQs')
+  ) {
+    throw new Error('Salary hike prerender did not contain the expected page content.')
+  }
+
+  return { markup, footerYear }
+}
+
 async function generateRouteHtml() {
   const sourceHtml = await readFile(sourceHtmlPath, 'utf8')
   const nonHomePages = Object.values(pageMetadata).filter(
     (metadata) => metadata.path !== '/',
   )
 
-  for (const metadata of nonHomePages) {
-    const routeDirectory = path.join(
-      outputDirectory,
-      metadata.path.replace(/^\/+|\/+$/g, ''),
-    )
-    const routeHtmlPath = path.join(routeDirectory, 'index.html')
-    const routeHtml = applyMetadata(sourceHtml, metadata)
+  const viteServer = await createServer({
+    ssr: { resolve: { externalConditions: ['module'] } },
+    server: { middlewareMode: true },
+    appType: 'custom',
+  })
 
-    await mkdir(routeDirectory, { recursive: true })
-    await writeFile(routeHtmlPath, routeHtml, 'utf8')
-    console.log(`Generated ${path.relative(projectRoot, routeHtmlPath)}`)
+  try {
+    for (const metadata of nonHomePages) {
+      const routeDirectory = path.join(
+        outputDirectory,
+        metadata.path.replace(/^\/+|\/+$/g, ''),
+      )
+      const routeHtmlPath = path.join(routeDirectory, 'index.html')
+      let routeHtml = applyMetadata(sourceHtml, metadata)
+
+      if (metadata.path === salaryHikePath) {
+        const { markup, footerYear } = await renderSalaryHikePage(viteServer)
+        routeHtml = addPrerenderedContent(routeHtml, markup, footerYear)
+      }
+
+      await mkdir(routeDirectory, { recursive: true })
+      await writeFile(routeHtmlPath, routeHtml, 'utf8')
+      console.log(`Generated ${path.relative(projectRoot, routeHtmlPath)}`)
+    }
+  } finally {
+    await viteServer.close()
   }
 }
 
